@@ -52,28 +52,33 @@ Constraints:
    
 */
 
-
 const romanToInt = (s) => {
-    const numbChart = {
-        'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000
-    };
+  const numbChart = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
 
-    let total = 0;
+  let total = 0;
 
-    // Loop through each letter in the string
-    for (let i = 0; i < s.length; i++) {
-        const current = numbChart[s[i]]; // Value of current Roman letter
-        const next = numbChart[s[i + 1]]; // Value of the next Roman letter
+  // Loop through each letter in the string
+  for (let i = 0; i < s.length; i++) {
+    const current = numbChart[s[i]]; // Value of current Roman letter
+    const next = numbChart[s[i + 1]]; // Value of the next Roman letter
 
-        // If the current number is smaller than the next, subtract it
-        if (next && current < next) {
-            total -= current; // Subtract because it's a special case
-        } else {
-            total += current; // Otherwise, add it
-        }
+    // If the current number is smaller than the next, subtract it
+    if (next && current < next) {
+      total -= current; // Subtract because it's a special case
+    } else {
+      total += current; // Otherwise, add it
     }
+  }
 
-    return total;
+  return total;
 };
 
 // Example usage

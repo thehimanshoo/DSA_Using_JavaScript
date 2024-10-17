@@ -20,19 +20,18 @@ Output: [0,1]
 
 */
 
-
 const sum = (num, target) => {
-    const map = new Map();
-    
-    for(let i=0; i<num.length; i++){
-        let complement = target - num[i];
+  const map = new Map();
 
-        if(map.has(complement)){
-            return [map.get(complement), i];
-        }
-        map.set(num[i], i);
-    };
-    return []
+  for (let i = 0; i < num.length; i++) {
+    let complement = target - num[i];
+
+    if (map.has(complement)) {
+      return [map.get(complement), i];
+    }
+    map.set(num[i], i);
+  }
+  return [];
 };
 
 console.log(sum([2, 7, 11, 15], 9));

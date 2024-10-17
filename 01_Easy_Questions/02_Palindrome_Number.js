@@ -21,27 +21,26 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 
 */
 
-
 const isPalindrome = (x) => {
-    // If x is negative or if it ends with 0 (but is not 0 itself), it's not a palindrome
-    if (x < 0 || (x % 10 === 0 && x !== 0)) {
-        return false;
-    }
+  // If x is negative or if it ends with 0 (but is not 0 itself), it's not a palindrome
+  if (x < 0 || (x % 10 === 0 && x !== 0)) {
+    return false;
+  }
 
-    let reversedHalf = 0;
-    // Reverse only the second half of the number
-    while (x > reversedHalf) {
-        reversedHalf = reversedHalf * 10 + (x % 10); // Add the last digit of x to reversedHalf
-        x = Math.floor(x / 10); // Remove the last digit from x
-    }
+  let reversedHalf = 0;
+  // Reverse only the second half of the number
+  while (x > reversedHalf) {
+    reversedHalf = reversedHalf * 10 + (x % 10); // Add the last digit of x to reversedHalf
+    x = Math.floor(x / 10); // Remove the last digit from x
+  }
 
-    // Check if the first half and second half are the same
-    return x === reversedHalf || x === Math.floor(reversedHalf / 10);
+  // Check if the first half and second half are the same
+  return x === reversedHalf || x === Math.floor(reversedHalf / 10);
 };
 
 // Example test cases
-console.log(isPalindrome(121));  // true
+console.log(isPalindrome(121)); // true
 console.log(isPalindrome(-121)); // false
-console.log(isPalindrome(10));   // false
+console.log(isPalindrome(10)); // false
 
 // Time Complexity O(log(n))
