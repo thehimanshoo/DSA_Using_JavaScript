@@ -66,4 +66,7 @@ const person = [
 
 // Call the function
 const result = findDuplicateEmails(person);
-console.log(result);
+// console.log(result);
+
+
+console.log(navigator.platform)
